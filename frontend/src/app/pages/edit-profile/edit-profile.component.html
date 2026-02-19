@@ -1,0 +1,24 @@
+<h2>Edit profile</h2>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label>First name</label>
+    <input type="text" formControlName="firstName" />
+  </div>
+
+  <div>
+    <label>Last name</label>
+    <input type="text" formControlName="lastName" />
+  </div>
+
+  <div>
+    <label>Phone</label>
+    <input type="text" formControlName="phone" />
+  </div>
+
+  <div *ngIf="error" style="color: red; margin-top: 8px;">{{ error }}</div>
+
+  <button type="submit" [disabled]="loading">Save</button>
+</form>
+<p>
+  <a routerLink="/profile">Back</a>
+</p>
